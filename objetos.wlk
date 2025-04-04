@@ -20,6 +20,11 @@ object pardo {
   method esFuerte() = false
 }
 
+object naranja {
+  method esFuerte() = true
+}
+
+
 //materiales
 object cobre {
   method esBrillante() = true
@@ -74,11 +79,45 @@ object placa {
   var suPeso = 20
   var suColor = rojo
 
-  method material() = vidrio
+  method material() = cobre
 
   method color() = suColor
   method color(unColor) {suColor = unColor} 
 
   method peso() = suPeso 
   method peso(unPeso) {suPeso = unPeso}     
+}
+
+
+//mas cosas
+  
+object arito {
+  method color() = celeste
+  method material() = cobre
+  method peso() = 180
+}
+
+object banquito {
+  var suColor = naranja
+
+  method color() = suColor
+  method color(unColor) {suColor = unColor}
+  
+  method material() = madera
+  method peso() = 1700 
+}
+
+
+object cajita {
+  var objetoInterno = arito
+
+  method color() = rojo 
+  method material() = cobre
+
+  method peso(){
+    return 400 + objetoInterno.peso()
+  }
+
+  method objetoInterno(unObjeto) {objetoInterno = unObjeto} 
+
 }
